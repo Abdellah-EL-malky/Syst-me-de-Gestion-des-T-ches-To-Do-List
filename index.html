@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./dist/style.css">
 </head>
-<body class="bg-slate-800">
+<body class="bg-slate-800 overflow-x-hidden	">
     <nav class="flex mt-10 ml-20 mr-20">
         <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="button">
             Add task +
@@ -66,7 +66,7 @@
                         </div>
                         <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
-                            Add new product
+                            Add new task
                         </button>
                     </form>
                 </div>
@@ -89,8 +89,8 @@
         </button>
     </nav>
     <main>
-        <div class="flex">
-            <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700 mt-20 ml-20">
+        <div class="flex justify-around	">
+            <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700 mt-20">
                 <h5 class="mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white">
                     To do
                     <p class="todocounter">3</p>
@@ -98,8 +98,6 @@
                 <hr class="h-0.5 -mt-6 bg-red-200 border-0 dark:bg-red-700">
                 <ul class="my-4 space-y-3">
                     <div class="dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white p-4 rounded-lg shadow border-l-4 border-red-500">
-                        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.<path fill="#f44336" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg> -->
-                        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.<path fill="#f44336" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg> -->
                         <h3 class="font-medium">Brief Soutenances Croisées</h3>
                         <span class="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">P2</span>
                         <div class="mt-2">
@@ -108,8 +106,6 @@
                         </div>
                     </div>
                     <div class="dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white p-4 rounded-lg shadow border-l-4 border-red-500">
-                        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.<path fill="#f44336" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg> -->
-                        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.<path fill="#f44336" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg> -->
                         <h3 class="font-medium">WORKSHOP 3</h3>
                         <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">P3</span>
                         <div class="mt-2">
@@ -118,8 +114,6 @@
                         </div>
                     </div>
                     <div class="dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white p-4 rounded-lg shadow border-l-4 border-red-500">
-                        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.<path fill="#f44336" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg> -->
-                        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.<path fill="#f44336" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg> -->
                         <h3 class="font-medium">Veille</h3>
                         <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">P3</span>
                         <div class="mt-2">
@@ -129,7 +123,7 @@
                     </div>
                 </ul>
             </div>
-            <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700 mt-20 ml-20">
+            <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700 mt-20">
                 <h5 class="mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white">
                     In progress
                     <p class="todocounter">1</p>
@@ -137,8 +131,6 @@
                 <hr class="h-0.5 -mt-6 bg-yellow-200 border-0 dark:bg-yellow-500">
                 <ul class="my-4 space-y-3">
                     <div class="dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white p-4 rounded-lg shadow border-l-4 border-yellow-500">
-                        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.<path fill="#f44336" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg> -->
-                        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.<path fill="#f44336" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg> -->
                         <h3 class="font-medium">WORKSHOP 2</h3>
                         <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">P1</span>
                         <div class="mt-2">
@@ -148,7 +140,7 @@
                     </div>
                 </ul>
             </div>
-            <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700 mt-20 ml-20">
+            <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700 mt-20">
                 <h5 class="mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white">
                     Done
                     <p class="todocounter">2</p>
@@ -156,8 +148,6 @@
                 <hr class="h-0.5 -mt-6 bg-green-200 border-0 dark:bg-green-700">
                 <ul class="my-4 space-y-3">
                     <div class="dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white p-4 rounded-lg shadow border-l-4 border-green-700">
-                        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.<path fill="#f44336" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg> -->
-                        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.<path fill="#f44336" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg> -->
                         <h3 class="font-medium">Brief 5</h3>
                         <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">P1</span>
                         <div class="mt-2">
@@ -166,8 +156,6 @@
                         </div>
                     </div>
                     <div class="dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white p-4 rounded-lg shadow border-l-4 border-green-700">
-                        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.<path fill="#f44336" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg> -->
-                        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.<path fill="#f44336" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg> -->
                         <h3 class="font-medium">WORKSHOP 1</h3>
                         <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">P1</span>
                         <div class="mt-2">
@@ -179,5 +167,6 @@
             </div>
         </div>
     </main>
+    <script src="../assets/js/index.js"></script>
 </body>
 </html> 
