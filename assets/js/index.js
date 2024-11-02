@@ -3,14 +3,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const modal = document.getElementById("crud-modal");
     const closeModalButton = modal.querySelector('[data-modal-toggle="crud-modal"]');
     const addTaskForm = modal.querySelector("form");
-    const todoList = document.querySelector(".todo-list");
-    const inProgressList = document.querySelector(".in-progress-list");
-    const doneList = document.querySelector(".done-list");
 
-    let taskBeingEdited = null;
+    const todoList = document.querySelector(".todo-column .task-list");
+    const inProgressList = document.querySelector(".in-progress-column .task-list");
+    const doneList = document.querySelector(".done-column .task-list");
 
     modalToggle.addEventListener("click", function() {
-        modal.classList.toggle("hidden");
+        modal.classList.remove("hidden");
     });
 
     closeModalButton.addEventListener("click", function() {
@@ -25,11 +24,38 @@ document.addEventListener("DOMContentLoaded", function() {
         const taskPriority = document.getElementById("priority").value;
         const taskDeadline = document.getElementById("taskDeadline").value;
 
-        if (taskBeingEdited) {
-            updateTask(taskBeingEdited, taskName, taskCategory, taskPriority, taskDeadline);
-            taskBeingEdited = null; 
+        if (!taskName || !taskCategory || !taskPriority || !taskDeadline) {
+            alert("Veuillez remplir tous les champs du formulaire.");
+            return;
+        }
+
+        const taskElement = document.createElement("div");
+        taskElement.classList.add("dark:bg-gray-600", "dark:hover:bg-gray-500", "dark:text-white", "p-4", "rounded-lg", "shadow", "border-l-4");
+
+        if (taskPriority === "P1") {
+            taskElement.classList.add("border-red-500");
+        } else if (taskPriority === "P2") {
+            taskElement.classList.add("border-yellow-500");
         } else {
-            createTask(taskName, taskCategory, taskPriority, taskDeadline);
+            taskElement.classList.add("border-green-500");
+        }
+
+        taskElement.innerHTML = `
+            <h3 class="font-medium">${taskName}</h3>
+            <h4>${taskDeadline}</h4>
+            <span class="bg-${taskPriority === "P1" ? "red" : taskPriority === "P2" ? "yellow" : "green"}-100 text-${taskPriority === "P1" ? "red" : taskPriority === "P2" ? "yellow" : "green"}-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded">${taskPriority}</span>
+            <div class="mt-2">
+                <button class="delete-btn bg-red-500 text-white px-2 py-1 rounded text-xs mr-2 hover:bg-red-400">Delete</button>
+                <button class="edit-btn bg-yellow-500 text-white px-2 py-1 rounded text-xs hover:bg-yellow-300">Edit</button>
+            </div>
+        `;
+
+        if (taskCategory === "To do") {
+            todoList.appendChild(taskElement);
+        } else if (taskCategory === "In progress") {
+            inProgressList.appendChild(taskElement);
+        } else if (taskCategory === "Done") {
+            doneList.appendChild(taskElement);
         }
 
         addTaskForm.reset();
@@ -38,91 +64,13 @@ document.addEventListener("DOMContentLoaded", function() {
         updateCounters();
     });
 
-    function createTask(name, category, priority, deadline) {
-        const taskElement = document.createElement("div");
-        taskElement.classList.add("dark:bg-gray-600", "dark:hover:bg-gray-500", "dark:text-white", "p-4", "rounded-lg", "shadow", "border-l-4");
-
-        if (priority === "P1") {
-            taskElement.classList.add("border-red-500");
-        } else if (priority === "P2") {
-            taskElement.classList.add("border-yellow-500");
-        } else {
-            taskElement.classList.add("border-green-500");
-        }
-
-        taskElement.innerHTML = `
-            <h3 class="font-medium">${name}</h3>
-            <span class="priority-tag">${priority}</span>
-            <p class="deadline">${deadline}</p>
-            <div class="mt-2">
-                <button class="delete-btn bg-red-500 text-white px-2 py-1 rounded text-xs mr-2 hover:bg-red-400">Delete</button>
-                <button class="edit-btn bg-yellow-500 text-white px-2 py-1 rounded text-xs hover:bg-yellow-300">Edit</button>
-            </div>
-        `;
-
-        taskElement.querySelector(".delete-btn").addEventListener("click", function() {
-            taskElement.remove();
-            updateCounters();
-        });
-
-        taskElement.querySelector(".edit-btn").addEventListener("click", function() {
-            editTask(taskElement, name, category, priority, deadline);
-        });
-
-        if (category === "To do") {
-            todoList.appendChild(taskElement);
-        } else if (category === "In progress") {
-            inProgressList.appendChild(taskElement);
-        } else if (category === "Done") {
-            doneList.appendChild(taskElement);
-        }
-    }
-
-    function editTask(taskElement, name, category, priority, deadline) {
-        document.getElementById("name").value = name;
-        document.getElementById("category").value = category;
-        document.getElementById("priority").value = priority;
-        document.getElementById("taskDeadline").value = deadline;
-        
-        taskBeingEdited = taskElement;
-        modal.classList.remove("hidden");
-    }
-
-    function updateTask(taskElement, name, category, priority, deadline) {
-        taskElement.querySelector("h3").textContent = name;
-        taskElement.querySelector(".priority-tag").textContent = priority;
-        taskElement.querySelector(".deadline").textContent = deadline;
-
-        taskElement.classList.remove("border-red-500", "border-yellow-500", "border-green-500");
-        if (priority === "P1") {
-            taskElement.classList.add("border-red-500");
-        } else if (priority === "P2") {
-            taskElement.classList.add("border-yellow-500");
-        } else {
-            taskElement.classList.add("border-green-500");
-        }
-
-        if (category === "To do") {
-            todoList.appendChild(taskElement);
-        } else if (category === "In progress") {
-            inProgressList.appendChild(taskElement);
-        } else if (category === "Done") {
-            doneList.appendChild(taskElement);
-        }
-    }
-
     function updateCounters() {
         const todoCount = todoList.childElementCount;
         const inProgressCount = inProgressList.childElementCount;
         const doneCount = doneList.childElementCount;
 
-        document.querySelector(".todocounter").textContent = todoCount;
-        document.querySelector(".inprogresscounter").textContent = inProgressCount;
-        document.querySelector(".donecounter").textContent = doneCount;
+        document.querySelector(".todo-column .todocounter").textContent = todoCount;
+        document.querySelector(".in-progress-column .todocounter").textContent = inProgressCount;
+        document.querySelector(".done-column .todocounter").textContent = doneCount;
     }
 });
-
-
-
-
-
