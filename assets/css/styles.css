@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media only screen and (min-width:768px) {
+    .todocounter{
+        position: static;
+        margin-left: 11.875rem;
+        position: relative;
+        left: 0.625rem;
+    }
+}
+
+.todocounter{
+    position: relative;
+    left: 6.875rem;
+    top: -1.25rem;
+}
