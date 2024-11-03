@@ -9,12 +9,12 @@
     <link rel="shortcut icon" href="../assets/Icon/logo.png"/>
 </head>
 <body class="bg-slate-800 overflow-x-hidden	">
-    <nav class="flex mt-10 ml-20 mr-20">
-        <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="button">
+    <nav class="flex flex-col md:flex-row mt-10 ml-4 mr-4 md:ml-20 md:mr-20">
+        <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 md:mt-0" type="button">
             Add task +
         </button>
         <div id="crud-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full shadow-xl">
-            <div class="relative p-4 w-full max-w-md max-h-full">
+            <div class="relative p-4 w-full max-w-md md:max-w-lg lg:max-w-xl">
                 <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                     <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                         <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
@@ -28,12 +28,12 @@
                         </button>
                     </div>
                     <form class="p-4 md:p-5">
-                        <div class="grid gap-4 mb-4 grid-cols-2">
+                        <div class="grid gap-4 mb-4 grid-cols-1 md:grid-cols-2">
                             <div class="col-span-2">
                                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
                                 <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type task name" required="">
                             </div>
-                            <div class="col-span-2 sm:col-span-1">
+                            <div class="col-span-2 md:col-span-1">
                                 <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
                                 <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                                     <option selected="">Select category</option>
@@ -42,7 +42,7 @@
                                     <option value="Done">Done</option>
                                 </select>
                             </div>
-                            <div class="col-span-2 sm:col-span-1">
+                            <div class="col-span-2 md:col-span-1">
                                 <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Priority</label>
                                 <select id="priority" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                                     <option selected="">Select category</option>
@@ -74,7 +74,7 @@
                 </div>
             </div>
         </div>   
-        <form class="max-w-md mx-auto">   
+        <form class="w-full max-w-md mx-auto">   
             <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
             <div class="relative">
                 <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -82,18 +82,18 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                     </svg>
                 </div>
-                <input type="search" id="default-search" class="block w-full p-4 ps-20 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search ..." required />
+                <input type="search" id="default-search" class="block w-full md:w-96 p-4 ps-20 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search ..." required />
                 <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
             </div>
         </form>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 md:mt-0">
             Add multiple +
         </button>
     </nav>
     <main>
-        <div class="flex justify-around	">
-            <div class="todo-column w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700 mt-20">
-                <h5 class="mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white">
+        <div class="flex flex-col md:flex-row justify-around">
+            <div class="todo-column w-full md:w-1/3 p-4 w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700 mt-20">
+                <h5 class="mb-3 text-base font-semibold text-gray-900 lg:text-xl dark:text-white">
                     To do
                     <p class="todocounter">3</p>
                 </h5>
@@ -128,8 +128,8 @@
                     </div>
                 </ul>
             </div>
-            <div class="in-progress-column w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700 mt-20">
-                <h5 class="mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white">
+            <div class="in-progress-column w-full md:w-1/3 p-4 w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700 mt-20">
+                <h5 class="mb-3 text-base font-semibold text-gray-900 lg:text-xl dark:text-white">
                     In progress
                     <p class="todocounter">1</p>
                 </h5>
@@ -146,8 +146,8 @@
                     </div>
                 </ul>
             </div>
-            <div class="done-column w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700 mt-20">
-                <h5 class="mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white">
+            <div class="done-column w-full md:w-1/3 p-4 w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700 mt-20">
+                <h5 class="mb-3 text-base font-semibold text-gray-900 lg:text-xl dark:text-white">
                     Done
                     <p class="todocounter">2</p>
                 </h5>
