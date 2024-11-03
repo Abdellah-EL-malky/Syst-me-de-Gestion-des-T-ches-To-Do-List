@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@media only screen and (min-width:768px) {
+@media only screen and (max-width:768px) {
     .todocounter{
         position: static;
-        margin-left: 11.875rem;
+        margin-left: 5rem;
         position: relative;
         left: 0.625rem;
     }
